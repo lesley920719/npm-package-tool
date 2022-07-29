@@ -1,0 +1,27 @@
+{
+  "name": "terminal-url-print",
+  "version": "1.0.0",
+  "description": "when run in terminal, print and copy server url",
+  "main": "./index.js",
+  "repository": "git@github.com:lesley920719/npm-package-tool.git",
+  "keywords": [
+    "terminal-url-print",
+    "terminal",
+    "server",
+    "node"
+  ],
+  "author": {
+    "name": "Lesley Lee",
+    "email": "lesley920817@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lesley920719/npm-package-tool/issues"
+  },
+  "homepage": "https://github.com/lesley920719/npm-package-tool/packages/terminal-url-print",
+  "dependencies": {
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "clipboardy": "^2.3.0"
+  }
+}

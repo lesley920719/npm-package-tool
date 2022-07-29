@@ -1,0 +1,19 @@
+{
+  "name": "@marioa/react-md",
+  "version": "1.0.5",
+  "description": "react markdown",
+  "main": "./index.js",
+  "repository": "git@github.com:lesley920719/npm-package-tool.git",
+  "keywords": [
+    "react markdown"
+  ],
+  "author": {
+    "name": "Lesley Lee",
+    "email": "lesley920817@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lesley920719/npm-package-tool/issues"
+  },
+  "homepage": "https://github.com/lesley920719/npm-package-tool/tree/main/packages/react-md"
+}
