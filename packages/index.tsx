@@ -1,3 +1,3 @@
-import ReactMD from './react-md/src/';
+import ReactMD from './react-md/src';
 
 export { ReactMD };

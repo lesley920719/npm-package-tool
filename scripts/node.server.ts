@@ -8,6 +8,7 @@ import terminalUrlPrint from '../packages/terminal-url-print';
 
 const app = express();
 const compiler = webpack(webpackConfig);
+const config = tomlJson({ fileUrl: './config.toml' });
 
 app.use(express.static('public')); // static
 
@@ -20,7 +21,7 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler));
 
-const port = '9101';
+const port = (config.server as any).port;
 app.listen(port, function () {
   terminalUrlPrint({port});
 });

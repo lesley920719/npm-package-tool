@@ -23,7 +23,6 @@ const cmdGet = (name: string, defaultTsc?: boolean): string => {
  */
 const buildCmdArr = [
   'webpack --config ./scripts/webpack.react-md.ts',
-  cmdGet('import-lodash-loader', true),
   cmdGet('rc-declaration-webpack-plugin', true),
   cmdGet('terminal-url-print', true),
 ];

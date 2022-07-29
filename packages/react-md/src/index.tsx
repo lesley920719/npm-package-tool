@@ -6,7 +6,7 @@ import darkStyle from './dark.scss';
  * @param props
  * @param {string}markdown
  */
-const ReactMd = (props: { markdown: string }): React.ReactElement => {
+const ReactMd = (props: { markdown: string }): JSX.Element => {
   const toLink = (str: string): string => {
     let value = str;
     const arr = /\[(.+?)\]\((.+?)\)/.exec(str);

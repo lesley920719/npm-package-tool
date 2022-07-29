@@ -3,7 +3,7 @@ import config from './webpack.config';
 import { resolve } from 'path';
 
 (config.module as any).rules.push({
-  test: /\.(ts|tsx)$/,
+  test: /\.(js|jsx|ts|tsx)$/,
   exclude: /node-modules/,
   use: [
     {
@@ -12,9 +12,6 @@ import { resolve } from 'path';
         cacheDirectory: true,
         cacheCompression: false,
       },
-    },
-    {
-      loader: resolve('./packages/import-lodash-loader/index.ts'),
     },
     {
       loader: 'eslint-loader',

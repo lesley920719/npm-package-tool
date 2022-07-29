@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/lesley920719/npm-package-tool/issues"
   },
-  "homepage": "https://github.com/lesley920719/npm-package-tool/packages/terminal-url-print",
+  "homepage": "https://github.com/lesley920719/npm-package-tool/tree/master/packages/terminal-url-print",
   "dependencies": {
     "boxen": "^5.0.0",
     "chalk": "^4.1.0",

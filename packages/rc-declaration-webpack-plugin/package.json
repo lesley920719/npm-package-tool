@@ -11,14 +11,13 @@
   ],
   "author": {
     "name": "Lesley Lee",
-    "email": "lesley920817@gmail.com",
-    "url": "https://marioa5945.github.io"
+    "email": "lesley920817@gmail.com"
   },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lesley920719/npm-package-tool/issues"
   },
-  "homepage": "https://github.com/lesley920719/npm-package-tool/tree/main/packages/rc-declaration-webpack-plugin",
+  "homepage": "https://github.com/lesley920719/npm-package-tool/tree/master/packages/rc-declaration-webpack-plugin",
   "peerDependencies": {
     "webpack": ">=5"
   }

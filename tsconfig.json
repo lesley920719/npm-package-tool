@@ -29,6 +29,6 @@
       "@packages": ["./packages"]
     }
   },
-  "files": ["./types/index.d.ts", "./types/other.d.ts"],
+  "files": ["./types/index.d.ts"],
   "include": ["src/**/*", "packages/**/*"],
 }
