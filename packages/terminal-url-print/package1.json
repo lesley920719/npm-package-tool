@@ -1,6 +1,6 @@
 {
   "name": "terminal-url-print",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "when run in terminal, print and copy server url",
   "main": "./index.js",
   "repository": "git@github.com:lesley920719/npm-package-tool.git",
