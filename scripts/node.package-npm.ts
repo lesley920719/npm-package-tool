@@ -3,7 +3,7 @@ import util from 'util';
 import tomlJson from 'toml-json';
 const config = tomlJson({ fileUrl: './config.toml' });
 const exec = util.promisify(require('child_process').exec);
-const choices = (config.packages as any).list.reverse();
+const choices = (config.packages ? config.packages : config as any).list.reverse();
 
 /**
  * Get defaut command
@@ -15,7 +15,7 @@ const cmdGet = (name: string, defaultTsc?: boolean): string => {
   cmd = defaultTsc
     ? cmd + ` && tsc --outDir ./lib/${name}/ --declaration --skipLibCheck --allowSyntheticDefaultImports ./packages/${name}/index.ts`
     : cmd;
-  return cmd + ` && cp ./packages/${name}/package.json ./lib/${name}/package.json && cp ./packages/${name}/README.md ./lib/${name}/README.md`;
+  return cmd + ` && cp ./packages/${name}/package1.json ./lib/${name}/package.json && cp ./packages/${name}/README.md ./lib/${name}/README.md`;
 };
 
 /**

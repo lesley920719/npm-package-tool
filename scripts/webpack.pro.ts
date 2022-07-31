@@ -1,5 +1,5 @@
 import config from './webpack.config';
-import CopyPlugin from 'copy-webpack-plugin';
+const CopyPlugin = require("copy-webpack-plugin");
 import { container } from 'webpack';
 const { ModuleFederationPlugin } = container;
 

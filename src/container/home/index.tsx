@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 
 export default class PageHome extends React.PureComponent {
   private nav = [
-    ...navObj.packages.list.reverse(),
+    ...(navObj.packages ? navObj.packages : navObj).list.reverse(),
     "blueprint-koa",
     "apib-json",
-    "toml-json",
     "tscn",
   ];
 

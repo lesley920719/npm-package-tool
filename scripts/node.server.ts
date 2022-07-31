@@ -21,7 +21,7 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler));
 
-const port = (config.server as any).port;
+const port = (config.server ? config.server : config as any).port;
 app.listen(port, function () {
   terminalUrlPrint({port});
 });
