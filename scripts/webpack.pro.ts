@@ -7,7 +7,7 @@ delete config.devtool;
 config.mode = 'production';
 (config.output as any).filename = 'js/[name].[contenthash].bundle.js';
 (config.module as any).rules.push({
-  test: /\.(js|jsx|ts|tsx)$/,
+  test: /\.(j|t)sx?$/,
   exclude: /node-modules/,
   use: [
     'babel-loader',

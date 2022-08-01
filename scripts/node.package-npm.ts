@@ -15,7 +15,9 @@ const cmdGet = (name: string, defaultTsc?: boolean): string => {
   cmd = defaultTsc
     ? cmd + ` && tsc --outDir ./lib/${name}/ --declaration --skipLibCheck --allowSyntheticDefaultImports ./packages/${name}/index.ts`
     : cmd;
-  return cmd + ` && cp ./packages/${name}/package1.json ./lib/${name}/package.json && cp ./packages/${name}/README.md ./lib/${name}/README.md`;
+  cmd += ` && cp ./packages/${name}/package1.json ./lib/${name}/package.json`;
+  cmd += ` && cp ./packages/${name}/README.md ./lib/${name}/README.md`;
+  return cmd;
 };
 
 /**
@@ -49,7 +51,7 @@ const rl = readline.createInterface(process.stdin, process.stdout);
 const selectBuildOrPublishPrint = () => {
   let str = step === 0 ? '\r\nSelect the components to build:\r\n' : '\r\nSelect the components to publish:\r\n';
   for (let i = 0; i < comCount; i++) {
-    str += `${buildIndex === i ? '[X]' : '[ ]'} ${choices[i]}\r\n`;
+    str += `${buildIndex === i ? '[√]' : '[ ]'} ${choices[i]}\r\n`;
   }
   process.stdout.write(str);
 };

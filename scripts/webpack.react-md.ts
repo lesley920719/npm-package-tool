@@ -1,5 +1,4 @@
 import { resolve } from 'path';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { Configuration } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 import RcDeclarationWebpackPlugin from '../packages/rc-declaration-webpack-plugin';
@@ -14,9 +13,9 @@ export default {
     filename: 'index.js',
     path: resolve('.', 'dist/react-md'),
     libraryTarget: 'commonjs2',
+    clean: true,
   },
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new RcDeclarationWebpackPlugin({ declarationDir: './dist/react-md/' }),
     new CopyPlugin({
       patterns: [
@@ -53,7 +52,7 @@ export default {
         ],
       },
       {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node-modules/,
         use: ['babel-loader'],
       },

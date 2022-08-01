@@ -1,7 +1,7 @@
 import os = require('os');
 import boxen = require('boxen');
 import chalk = require('chalk');
-import clipboardy from 'clipboardy';
+import { write } from 'clipboardy';
 
 /**
  * Get localhost ip host address
@@ -43,7 +43,7 @@ const terminalUrlPrint = async (info:{port: string, copyType?: 'localhost' | 'ip
 
   try {
     if (copyType !== 'none'){
-      await clipboardy.write(copyType === 'localhost' ? localAddress : ipAddress);
+      await write(copyType === 'localhost' ? localAddress : ipAddress);
       message += `\n\n${chalk.grey(`Copied ${copyType === 'localhost' ? 'Local' : 'IP'} url to clipboard!`)}`;
     }
   } catch (err) {
