@@ -42,7 +42,7 @@ build or publish package to https://registry.npmjs.org
 $ yarn deploy
 ```
 
-publish docs folder to GitHub Pages
+publish docs directory to GitHub Pages
 
 ## License
 
