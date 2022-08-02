@@ -20,8 +20,9 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'template/index.html',
-      publicPath: '/',
+      template: devMode ? 'template/index.html' : 'template/build.html',
+      filename: 'index.html',
+      publicPath: devMode ? '/' : './',
     }),
     new MiniCssExtractPlugin({
       filename: devMode ? 'css/[name].css' : 'css/[name].[contenthash].css',
@@ -30,8 +31,9 @@ export default {
   ],
   output: {
     filename: 'js/[name].bundle.js',
-    path: resolve('.', 'build'),
+    path: resolve('.', 'docs'),
     clean: true,
+    publicPath: devMode ? '/' : './',
   },
   module: {
     rules: [
