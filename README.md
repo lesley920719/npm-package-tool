@@ -36,7 +36,13 @@ Your app is ready to be deployed!
 $ yarn package
 ```
 
-build or publish package
+build or publish package to https://registry.npmjs.org
+
+```
+$ yarn deploy
+```
+
+publish docs folder to GitHub Pages
 
 ## License
 

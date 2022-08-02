@@ -2,12 +2,14 @@
   "name": "npm-package-tool",
   "version": "1.0.0",
   "private": true,
+  "homePage": "./",
   "description": "React and Typescript, includes some packages and demo pages",
   "main": "./src/app.tsx",
   "scripts": {
     "start": "cross-env NODE_ENV=development ts-node ./scripts/node.server.ts",
     "build": "webpack --config ./scripts/webpack.pro.ts",
-    "package": "ts-node ./scripts/node.package-npm.ts"
+    "package": "ts-node ./scripts/node.package-npm.ts",
+    "deploy": "gh-pages -d docs"
   },
   "repository": "git@github.com:lesley920719/npm-package-tool.git",
   "keywords": [
@@ -68,6 +70,7 @@
     "eslint-plugin-react": "^7.24.0",
     "express": "^4.17.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.0.0-beta.6",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.3.5",
