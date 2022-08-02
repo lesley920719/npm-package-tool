@@ -22,7 +22,7 @@ export default {
     new HtmlWebpackPlugin({
       template: devMode ? 'template/index.html' : 'template/build.html',
       filename: 'index.html',
-      publicPath: './',
+      publicPath: devMode ? '/' : './',
     }),
     new MiniCssExtractPlugin({
       filename: devMode ? 'css/[name].css' : 'css/[name].[contenthash].css',
@@ -33,7 +33,7 @@ export default {
     filename: 'js/[name].bundle.js',
     path: resolve('.', 'docs'),
     clean: true,
-    publicPath: './',
+    publicPath: devMode ? '/' : './',
   },
   module: {
     rules: [
