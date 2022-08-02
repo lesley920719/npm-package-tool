@@ -33,7 +33,6 @@ export default {
     filename: 'js/[name].bundle.js',
     path: resolve('.', 'docs'),
     clean: true,
-    publicPath: devMode ? '/' : './',
   },
   module: {
     rules: [
