@@ -1,5 +1,7 @@
 import config from './webpack.config';
 const CopyPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 import { container } from 'webpack';
 const { ModuleFederationPlugin } = container;
 
@@ -15,7 +17,7 @@ config.mode = 'production';
 });
 (config.plugins as any).push(
   new ModuleFederationPlugin({
-    name: 'packageLib',
+    name: 'npmPackageToolLib',
     filename: 'js/remoteEntry.js',
     exposes: {
       './router': './src/pageRouter',
@@ -31,6 +33,11 @@ config.mode = 'production';
   })
 );
 config.optimization = {
+  minimize: true,
+  minimizer: [
+    new TerserPlugin(),
+    new CssMinimizerPlugin(),
+  ],
   splitChunks: {
     chunks: 'async',
     minSize: 20000,

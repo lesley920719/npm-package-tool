@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 export default class PageHome extends React.PureComponent {
   private nav = [
     ...(navObj.packages ? navObj.packages : navObj).list.reverse(),
-    "blueprint-koa",
-    "apib-json",
-    "tscn",
+    // "blueprint-koa",
+    // "apib-json",
+    // "tscn",
   ];
 
   render(): React.ReactElement {
@@ -16,7 +16,7 @@ export default class PageHome extends React.PureComponent {
       <div className={homeStyle.homePage}>
         <main>
           <Link to={"/"}>
-            <span>
+            <span className={homeStyle.homePageLogo}>
               <img src="./img/logo.png" />
             </span>
           </Link>

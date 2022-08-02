@@ -39,9 +39,13 @@ export default {
       {
         test: /\.s(a|c)ss$/,
         use: [
-          // dev mode css don't hot update
+          // fix it: dev mode css not hot update
           devMode ? {
             loader: 'style-loader',
+            options: {
+              injectType: "styleTag",
+              esModule: true,
+            }
           } : {
             loader: MiniCssExtractPlugin.loader,
           },

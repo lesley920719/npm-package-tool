@@ -11,33 +11,40 @@
   height: 100%;
 
   main {
-    > span {
-      cursor: pointer;
-
-      img {
-        width: 150px;
-        display: block;
-        margin: 15px auto;
-        border-radius: 50%;
-
-        &:hover {
-          opacity: 0.8;
+    > a {
+      text-decoration: none;
+      > span {
+        cursor: pointer;
+        &.homePageLogo {
+          display: block;
+          width: 300px;
+          height: 300px;
+          margin: 20px auto;
+        }
+  
+        img {
+          width: 100%;
+          display: block;
+  
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
-    }
-
-    p {
-      color: #333333;
-      text-align: center;
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 30px;
-      border-bottom: 1px dashed #8c8c8c;
-      list-style: none;
-
-      &:hover {
-        color: #61dafb;
-        text-decoration: underline;
+  
+      p {
+        color: #333333;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 32px;
+        border-bottom: 1px dashed #8c8c8c;
+        list-style: none;
+  
+        &:hover {
+          color: #61dafb;
+          text-decoration: underline;
+        }
       }
     }
   }
