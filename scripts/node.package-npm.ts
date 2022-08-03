@@ -1,6 +1,9 @@
 import readline from 'readline';
 import util from 'util';
 import tomlJson from 'toml-json';
+const { copyFile } = require('fs/promises');
+const { existsSync } = require('fs');
+const path = require('path');
 const config = tomlJson({ fileUrl: './config.toml' });
 const exec = util.promisify(require('child_process').exec);
 const choices = (config.packages ? config.packages : config as any).list.reverse();
@@ -81,25 +84,36 @@ process.stdin.on('keypress', (s: unknown, key: any): void => {
 });
 
 const execCmd = async (cmd: string) => {
-  const { stdout, stderr } = await exec(cmd);
-  console.log(stderr === '' ? stdout : stderr);
+  try{
+    const { stdout, stderr } = await exec(cmd);
+    console.log(stderr === '' ? stdout : stderr);
+  } catch(err) {
+    console.log('error---', err)
+  }
 
-  if (step === 2) {
+  if (step === 1) {
     console.log('\r\n===================== exit\r\n');
     process.exit(0);
-  } else {
-    selectBuildOrPublishPrint();
   }
 };
 
-rl.on('line', () => {
+rl.on('line', async() => {
   if (step === 0) {
+    let name = choices[buildIndex] as string;
     console.log(`${choices[buildIndex]} is building...`);
-    execCmd(buildCmdArr[comCount - buildIndex - 1]);
+    await execCmd(buildCmdArr[comCount - buildIndex - 1]);
+    // file not exist -> execute copyFile
+    if(!existsSync(path.resolve('.', `./lib/${name}/package.json`))) {
+      console.log('file copy failed, now execute copyFile...')
+      name = name.replace(/\'/g, "").trim();
+      await copyFile(path.resolve('.', `./packages/${name}/package1.json`), path.resolve('.', `./lib/${name}/package.json`));
+      await copyFile(path.resolve('.', `./packages/${name}/README.md`), path.resolve('.', `./lib/${name}/README.md`));
+    }
+    // next step to publish
     step++;
+    selectBuildOrPublishPrint();
   } else if (step === 1) {
     console.log(`${choices[buildIndex]} is publish...`);
-    step++;
     execCmd(publishCmdGet(choices[buildIndex]));
   }
 }).on('close', () => {
