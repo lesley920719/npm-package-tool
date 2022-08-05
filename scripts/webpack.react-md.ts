@@ -11,12 +11,12 @@ export default {
   },
   output: {
     filename: 'index.js',
-    path: resolve('.', 'dist/react-md'),
+    path: resolve('.', 'lib/react-md'),
     libraryTarget: 'commonjs2',
     clean: true,
   },
   plugins: [
-    new RcDeclarationWebpackPlugin({ declarationDir: './dist/react-md/' }),
+    new RcDeclarationWebpackPlugin({ declarationDir: './lib/react-md/' }),
     new CopyPlugin({
       patterns: [
         {

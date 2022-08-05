@@ -2,4 +2,4 @@
 port = "9101"
 
 [packages]
-list = [ 'react-md', 'rc-declaration-webpack-plugin', 'terminal-url-print' ]
+list = ['react-md','rc-declaration-webpack-plugin','terminal-url-print']

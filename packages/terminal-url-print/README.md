@@ -18,3 +18,6 @@ terminalUrlPrint({port: '8080'});
 // Change copy's path
 terminalUrlPrint({port: '8080', copyType: 'ip'});
 ```
+
+## Screenshot
+![GITHUB](https://gitee.com/lesley92/picture_warehouse/raw/master/images/terminal-url-print-screenshot.png)
