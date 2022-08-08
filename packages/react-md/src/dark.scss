@@ -12,6 +12,12 @@
     color: #fcb827;
   }
 
+  img {
+    border-style:none;
+    max-width: 100%;
+    box-sizing: content-box;
+  }
+
   h1 {
     font-size: 30px;
     text-align: center;

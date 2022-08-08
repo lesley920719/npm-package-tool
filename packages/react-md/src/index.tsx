@@ -7,11 +7,23 @@ import darkStyle from './dark.scss';
  * @param {string}markdown
  */
 const ReactMd = (props: { markdown: string }): JSX.Element => {
+  const toImg = (str: string): string => {
+    let value = str;
+    const arr = /!\[(.+?)\]\((.+?)\)/.exec(str);
+    if (arr) {
+      value = str.replace(arr[0], `<a href="${arr[2]}" target="_blank" rel="noreferrer">
+        <img src="${arr[2]}" alt="${arr[1]}" />
+      </a>`);
+      value = toImg(value);
+    }
+    return value;
+  };
+
   const toLink = (str: string): string => {
     let value = str;
     const arr = /\[(.+?)\]\((.+?)\)/.exec(str);
     if (arr) {
-      value = str.replace(arr[0], `<a href="${arr[2]}">${arr[1]}</a>`);
+      value = str.replace(arr[0], `<a href="${arr[2]}" target="_blank">${arr[1]}</a>`);
       value = toLink(value);
     }
     return value;
@@ -241,6 +253,7 @@ const ReactMd = (props: { markdown: string }): JSX.Element => {
             arr[i] = `<p>${arr[i]}</p>`;
           }
           arr[i] = toH(arr[i]);
+          arr[i] = toImg(arr[i]);
           arr[i] = toLink(arr[i]);
           arr[i] = toB(arr[i]);
           arr[i] = toEm(arr[i]);
