@@ -20,4 +20,4 @@ terminalUrlPrint({port: '8080', copyType: 'ip'});
 ```
 
 ## Screenshot
-![GITHUB](https://gitee.com/lesley92/picture_warehouse/raw/master/images/terminal-url-print-screenshot.png)
+![GITHUB](https://raw.githubusercontent.com/lesley920719/npm-package-tool/master/public/img/terminal-url-print-screenshot.png)
